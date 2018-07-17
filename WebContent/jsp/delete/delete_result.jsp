@@ -1,8 +1,7 @@
-<%@page import="org.apache.catalina.tribes.MembershipService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="domain.*" %>
 <%@ page import="service.*" %>
 <%@ page import="dao.*" %>
-<%@ page import="domain.*" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,17 +13,12 @@
 		MemberBean member = new MemberBean();
 		member.setMemID(request.getParameter("memid"));
 		member.setPassword(request.getParameter("pass"));
-		member.setName(request.getParameter("name"));
-		member.setSsn(request.getParameter("ssn"));
-		MemberServiceImpl.getinstance().createMember(member);
-		
+		MemberServiceImpl.getinstance().deleteMember(member);
 		
 	%>
-	<h3>회원가입 성공</h3>
-	<form action="../login/user_login_form.jsp">
-		<input type="submit" value="로그인" />
+	<h3>회원탈퇴 완료</h3>
+	<form action="../../main.jsp">
+		<input type="submit" value="메인페이지" />
 	</form>
-	
-	
 </body>
 </html>

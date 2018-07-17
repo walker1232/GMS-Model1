@@ -20,34 +20,40 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public void updateMember(MemberBean member) {
-		// TODO Auto-generated method stub
+		MemberDAOImpl.getinstance().updateMember(member);
 		
 	}
 
 	@Override
 	public void deleteMember(MemberBean member) {
-		// TODO Auto-generated method stub
+		MemberDAOImpl.getinstance().deleteMember(member);
 		
 	}
 	@Override
 	public List<MemberBean> listMember() {
-		// TODO Auto-generated method stub
-		return null;
+		/*List<MemberBean> memList = null;
+		memList = MemberDAOImpl.getinstance().selectAllMemberlist();
+		return memList;*/
+		
+		return MemberDAOImpl.getinstance().selectAllMemberlist();
 	}
 	@Override
 	public List<MemberBean> searchByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		/*List<MemberBean> someName = null;
+		someName = MemberDAOImpl.getinstance().selectMemberByName(name);*/
+		return MemberDAOImpl.getinstance().selectMemberByName(name);
 	}
 	@Override
 	public MemberBean searchById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		/*MemberBean someId = null;
+		someId = MemberDAOImpl.getinstance().selectById(id);*/
+		/*MemberDAOImpl.getinstance().selectById(id);*/
+		return MemberDAOImpl.getinstance().selectById(id);
 	}
 	@Override
 	public int countMember() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return MemberDAOImpl.getinstance().countMember();
 	}
 	@Override
 	public boolean login(MemberBean member) {
